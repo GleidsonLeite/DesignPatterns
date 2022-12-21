@@ -3,6 +3,7 @@ package com.github.gleidsonsilva.loja.orcamento;
 import java.math.BigDecimal;
 
 import com.github.gleidsonsilva.loja.orcamento.situacao.EmAnalise;
+import com.github.gleidsonsilva.loja.orcamento.situacao.Finalizado;
 import com.github.gleidsonsilva.loja.orcamento.situacao.SituacaoOrcamento;
 
 public class Orcamento {
@@ -47,6 +48,10 @@ public class Orcamento {
 
     public void setSituacao(SituacaoOrcamento situacao) {
         this.situacao = situacao;
+    }
+
+    public boolean isFinalizado() {
+        return situacao instanceof Finalizado;
     }
 
 }
