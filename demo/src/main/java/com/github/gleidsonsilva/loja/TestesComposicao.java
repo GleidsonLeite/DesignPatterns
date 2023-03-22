@@ -2,6 +2,7 @@ package com.github.gleidsonsilva.loja;
 
 import com.github.gleidsonsilva.loja.orcamento.ItemOrcamento;
 import com.github.gleidsonsilva.loja.orcamento.Orcamento;
+import com.github.gleidsonsilva.loja.orcamento.OrcamentoProxy;
 
 import java.math.BigDecimal;
 
@@ -15,6 +16,9 @@ public class TestesComposicao {
         novo.adicionarItem(new ItemOrcamento(new BigDecimal("500")));
         novo.adicionarItem(antigo);
 
-        System.out.println(novo.getValor());
+        OrcamentoProxy proxy = new OrcamentoProxy(novo);
+
+        System.out.println(proxy.getValor());
+        System.out.println(proxy.getValor());
     }
 }
