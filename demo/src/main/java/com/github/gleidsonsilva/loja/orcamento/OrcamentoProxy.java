@@ -2,11 +2,11 @@ package com.github.gleidsonsilva.loja.orcamento;
 
 import java.math.BigDecimal;
 
-public class OrcamentoProxy extends Orcamento {
+public class OrcamentoProxy implements Orcavel {
     private BigDecimal valor;
-    private Orcamento orcamento;
+    private Orcavel orcamento;
 
-    public OrcamentoProxy(Orcamento orcamento) {
+    public OrcamentoProxy(Orcavel orcamento) {
         this.orcamento = orcamento;
     }
 
