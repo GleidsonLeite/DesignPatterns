@@ -5,6 +5,7 @@ import java.util.Arrays;
 
 import com.github.gleidsonsilva.loja.pedido.GeraPedido;
 import com.github.gleidsonsilva.loja.pedido.GeraPedidoHandler;
+import com.github.gleidsonsilva.loja.pedido.LogDePedido;
 import com.github.gleidsonsilva.loja.pedido.acao.EnviarEmailPedido;
 import com.github.gleidsonsilva.loja.pedido.acao.SalvarPedidoNoBancoDeDados;
 
@@ -18,7 +19,8 @@ public class TestesPedidos {
         GeraPedidoHandler handler = new GeraPedidoHandler(
                 Arrays.asList(
                         new SalvarPedidoNoBancoDeDados(),
-                        new EnviarEmailPedido()));
+                        new EnviarEmailPedido(),
+                        new LogDePedido()));
         handler.execute(gerador);
 
     }

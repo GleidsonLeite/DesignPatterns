@@ -7,10 +7,10 @@ import com.github.gleidsonsilva.loja.orcamento.Orcamento;
 import com.github.gleidsonsilva.loja.pedido.acao.AcaoAposGerarPedido;
 
 public class GeraPedidoHandler {
-    private List<AcaoAposGerarPedido> acoes;
+    private List<AcaoAposGerarPedido> acoesAposGerarPedidos;
 
-    public GeraPedidoHandler(List<AcaoAposGerarPedido> acoes) {
-        this.acoes = acoes;
+    public GeraPedidoHandler(List<AcaoAposGerarPedido> acoesAposGerarPedidos) {
+        this.acoesAposGerarPedidos = acoesAposGerarPedidos;
     }
 
     public void execute(GeraPedido dados) {
@@ -19,6 +19,6 @@ public class GeraPedidoHandler {
 
         Pedido pedido = new Pedido(dados.getCliente(), LocalDateTime.now(), orcamento);
 
-        acoes.forEach(a -> a.executarAcao(pedido));
+        acoesAposGerarPedidos.forEach(a -> a.executarAcao(pedido));
     }
 }
